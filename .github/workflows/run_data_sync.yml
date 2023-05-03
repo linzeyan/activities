@@ -134,9 +134,9 @@ jobs:
 
           python scripts/gen_svg.py --from-db --title "${{ env.TITLE_GRID }}" --type grid --athlete "${{ env.ATHLETE }}" --output assets/grid.svg --special-color yellow --special-color2 red --use-localtime --min-distance "${{ env.MIN_GRID_DISTANCE }}"
 
-      #          python scripts/gen_svg.py --from-db --type circular --use-localtime
+          python scripts/gen_svg.py --from-db --type circular --use-localtime
 
-      #          python scripts/gen_svg.py --from-db --year $(date +"%Y")  --language zh_CN --title "$(date +"%Y") Running" --type github --athlete "${{ env.ATHLETE }}" --special-color yellow --special-color2 red --output assets/github_$(date +"%Y").svg --use-localtime --min-distance 0.5
+          python scripts/gen_svg.py --from-db --year $(date +"%Y") --title "$(date +"%Y") Running" --type github --athlete "${{ env.ATHLETE }}" --special-color yellow --special-color2 red --output assets/github_$(date +"%Y").svg --use-localtime --min-distance 0.5
 
       - name: Push new runs
         run: |
