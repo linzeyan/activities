@@ -52,13 +52,13 @@ class Generator:
                 filters = {"before": datetime.datetime.utcnow()}
 
         for run_activity in self.client.get_activities(**filters):
-            if run_activity.type == "Run":
-                created = update_or_create_activity(self.session, run_activity)
-                if created:
-                    sys.stdout.write("+")
-                else:
-                    sys.stdout.write(".")
-                sys.stdout.flush()
+            # if run_activity.type == "Run":
+            created = update_or_create_activity(self.session, run_activity)
+            if created:
+                sys.stdout.write("+")
+            else:
+                sys.stdout.write(".")
+            sys.stdout.flush()
         self.session.commit()
 
     def sync_from_data_dir(self, data_dir, file_suffix="gpx"):
