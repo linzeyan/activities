@@ -15,9 +15,8 @@ const titleForShow = (run) => {
   if (run.name) {
     name = run.name;
   }
-  return `${name} ${date} ${distance} KM ${
-    !run.summary_polyline ? '(No map data for this run)' : ''
-  }`;
+  return `${name} ${date} ${distance} KM ${!run.summary_polyline ? '(No map data)' : ''
+    }`;
 };
 
 const formatPace = (d) => {
@@ -44,7 +43,7 @@ const convertMovingTime2Sec = (moving_time) => {
 const formatRunTime = (moving_time) => {
   const totalSeconds = convertMovingTime2Sec(moving_time)
   const seconds = totalSeconds % 60
-  const minutes = (totalSeconds-seconds) / 60
+  const minutes = (totalSeconds - seconds) / 60
   if (minutes === 0) {
     return seconds + 's';
   }
@@ -62,33 +61,7 @@ const cities = chinaCities.map((c) => c.name);
 // what about oversea?
 const locationForRun = (run) => {
   let location = run.location_country;
-  let [city, province, country] = ['', '', ''];
-  if (location) {
-    // Only for Chinese now
-    // should fiter 臺灣
-    const cityMatch = location.match(/[\u4e00-\u9fa5]{2,}(市|自治州)/);
-    const provinceMatch = location.match(/[\u4e00-\u9fa5]{2,}(省|自治区)/);
-    if (cityMatch) {
-      [city] = cityMatch;
-      if (!cities.includes(city)) {
-        city = ''
-      }
-    }
-    if (provinceMatch) {
-      [province] = provinceMatch;
-    }
-    const l = location.split(',');
-    // or to handle keep location format
-    let countryMatch = l[l.length - 1].match(
-      /[\u4e00-\u9fa5].*[\u4e00-\u9fa5]/
-    );
-    if (!countryMatch && l.length >= 3) {
-      countryMatch = l[2].match(/[\u4e00-\u9fa5].*[\u4e00-\u9fa5]/);
-    }
-    if (countryMatch) {
-      [country] = countryMatch;
-    }
-  }
+  let [city, province, country] = ['', '', '臺灣'];
   if (MUNICIPALITY_CITIES_ARR.includes(city)) {
     province = city;
   }

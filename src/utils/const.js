@@ -24,13 +24,13 @@ const ROAD_LABEL_DISPLAY = true;
 
 // IF you outside China please make sure IS_CHINESE = false
 const IS_CHINESE = false;
-const USE_ANIMATION_FOR_GRID = false;
+const USE_ANIMATION_FOR_GRID = true;
 const CHINESE_INFO_MESSAGE = (yearLength, year) => {
   const yearStr = year === 'Total' ? '所有' : ` ${year} `;
   return `我用 App 记录自己跑步 ${yearLength} 年了，下面列表展示的是${yearStr}的数据`;
 }
-const ENGLISH_INFO_MESSAGE = (year) =>
-  `The table shows year ${year} data`;
+const ENGLISH_INFO_MESSAGE = (yearLength, year) =>
+  `${yearLength}-year-activity, the table shows year ${year} data`;
 
 // not support English for now
 const CHINESE_LOCATION_INFO_MESSAGE_FIRST =
@@ -76,6 +76,6 @@ const nike = 'rgb(224,237,94)'; // if you want change the main color change here
 
 // If your map has an offset please change this line
 // issues #92 and #198
-export const NEED_FIX_MAP = false;
+export const NEED_FIX_MAP = true;
 export const MAIN_COLOR = nike;
 export const PROVINCE_FILL_COLOR = '#47b8e0';
