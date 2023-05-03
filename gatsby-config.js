@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: process.env.PATH_PREFIX || '/',
   siteMetadata: {
-    siteTitle: 'Activities\' Page',
+    siteTitle: 'Activities Page',
     siteUrl: 'https://linzeyan.github.io',
     logo: 'https://avatars.githubusercontent.com/u/28521870?v=4',
     description: 'Personal activities',
