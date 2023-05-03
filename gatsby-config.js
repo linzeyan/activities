@@ -3,7 +3,7 @@ module.exports = {
   siteMetadata: {
     siteTitle: 'Activities\' Page',
     siteUrl: 'https://linzeyan.github.io',
-    logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTtc69JxHNcmN1ETpMUX4dozAgAN6iPjWalQ&usqp=CAU',
+    logo: 'https://avatars.githubusercontent.com/u/28521870?v=4',
     description: 'Personal activities',
     navLinks: [
       {
