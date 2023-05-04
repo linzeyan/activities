@@ -7,12 +7,12 @@ module.exports = {
     description: 'Personal activities',
     navLinks: [
       {
-        name: 'Blog',
+        name: 'Home',
         url: 'https://linzeyan.github.io',
       },
       {
-        name: 'About',
-        url: 'https://linzeyan.github.io/#about',
+        name: 'Running',
+        url: 'https://linzeyan.github.io/running',
       },
     ],
   },
