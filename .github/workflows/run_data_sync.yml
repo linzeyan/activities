@@ -3,7 +3,7 @@ name: Run Data Sync
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * 1"
+    - cron: '0 0 * * 1'
   push:
     branches:
       - main
@@ -11,6 +11,7 @@ on:
       # - scripts/nike_sync.py
       # - scripts/nike_to_strava_sync.py
       - scripts/strava_sync.py
+      - .github/workflow/run_data_sync.yml
     # - scripts/gen_svg.py
     # - scripts/garmin_sync.py
     # - scripts/keep_sync.py
@@ -21,7 +22,8 @@ on:
 
 env:
   # please change to your own config.
-  RUN_TYPE: strava # support strava/nike/garmin/garmin_cn/keep/only_gpx/nike_to_strava/strava_to_garmin/strava_to_garmin_cn/garmin_to_strava/garmin_to_strava_cn/codoon, Please change the 'pass' it to your own
+  # RUN_TYPE: strava # support strava/nike/garmin/garmin_cn/keep/only_gpx/nike_to_strava/strava_to_garmin/strava_to_garmin_cn/garmin_to_strava/garmin_to_strava_cn/codoon, Please change the 'pass' it to your own
+  RUN_TYPE: nike_to_strava
   ATHLETE: Ricky
   TITLE: Ricky's Activities
   MIN_GRID_DISTANCE: 10 # change min distance here
